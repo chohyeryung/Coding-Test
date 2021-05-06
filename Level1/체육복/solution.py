@@ -1,9 +1,20 @@
 def solution(n, lost, reserve):
-    answer = 0
-    for r in reserve:
-        for l in lost:
-            if r+1 == l or r-1 == l:
-                answer+=1
+    answer = n-len(lost)
+
+    for i in range(len(reserve)):
+        reserve[i] = reserve[i]-1
+
+    for l in lost:
+        if l in reserve:
+            answer+=1
+
+    for i in range(len(reserve)):
+        reserve[i] = reserve[i] + 1
+
+    for l in lost:
+        if l in reserve:
+            answer += 1
+
     return answer
 
 n = 5
