@@ -1,14 +1,13 @@
 def solution(array, commands):
-    i=0
-    j=0
-    k=0
+    answer = []
     for command in commands:
         i = command[0]
         j = command[1]
-        array = array[i-1:j]
-        print(array)
         k = command[2]
-
+        a = array[i-1:j]
+        a.sort()
+        answer.append(a[k-1])
+    return answer
 
 
 array = [1, 5, 2, 6, 3, 7, 4]
