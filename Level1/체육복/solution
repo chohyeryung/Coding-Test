@@ -1,0 +1,22 @@
+[계속 짠 코드]
+    for l in _lost:
+        if l-1 in _reserve:
+            _reserve.remove(l-1)
+        elif l+1 in _reserve:
+            _reserve.remove(l+1)
+        else:
+            n-=1
+만약 여벌을 빌려주지 못하는 상황 -> else 이므로 모든 학생 수에서
+한 명씩 제외시키는 코드를 짰다.
+
+[놓친 부분]
+계속 몇개의 테스트 케이스에서 실패했다.
+인터넷을 조금 염탐했다 ㅎㅎ..
+여벌 체육복을 가져온 학생이 체육복을 도난당했을 수도 있다는 사항을
+유의하지 못했던 것이 문제였다.
+
+[해결 방법]
+매개변수로 받은 lost, reserve 배열을 이용해 새로운 배열을 만들어야한다.
+_lost = [l for l in lost if l not in reserve] 와,
+_reserve = [r for r in reserve if r not in lost]로 여벌 체육복을
+가져왔지만 도난 당한 학생을 빼준 배열을 다시 생성해준다.
