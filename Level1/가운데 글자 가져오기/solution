@@ -1,0 +1,12 @@
+python 인덱싱 사용
+s = "hello world"
+s[0:5] -> 0~4 -> hello
+
+answer = s[(len(s)-1)//2 : (len(s)+2)//2]
+s = "abcde" 일 때
+(len(s)-1)//2 -> 2       //       (len(s)+2)//2 -> 3
+2~2 => c
+
+s = "qwer" 일 때
+(len(s)-1)//2 -> 1       //       (len(s)+2)//2 -> 3
+1~2 => we
